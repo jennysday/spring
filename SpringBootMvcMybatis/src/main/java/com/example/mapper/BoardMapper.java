@@ -3,11 +3,9 @@ package com.example.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 import com.example.dto.Board;
 
-@Repository // @Repository를 사용하여 Spring의 Bean으로 등록
 @Mapper // @Mapper도 함께 사용하여 MyBatis 매퍼로 인식
 public interface BoardMapper {
 	
