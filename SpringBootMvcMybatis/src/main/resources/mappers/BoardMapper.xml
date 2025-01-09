@@ -10,7 +10,7 @@
 	</select>
 	
 	<!-- 모든 게시글 조회 -->
-	<select id="getAllBoards" resultType="com.example.dto.Board">
+	<select id="getBoards" resultType="com.example.dto.Board">
 		<![CDATA[
 			select * from board
 		]]>	
