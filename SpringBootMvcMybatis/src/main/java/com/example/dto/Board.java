@@ -2,6 +2,9 @@ package com.example.dto;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -21,15 +24,29 @@ import lombok.Data;
 @Builder
 public class Board {
 
+	@JsonProperty("rowNum")
     private int rownum; //행번호 
+	
+	@JsonProperty("row")
     private int num; //게시글 번호
+	
+	@JsonProperty("id")
     private int id; //게시글ID 
+	
+	@JsonProperty("title")
     private String title; //게시글 제목
+	
+	@JsonProperty("content")
     private String content;//게시글 내용
+	
+	@JsonProperty("writer")
     private String writer; //작성자
+    
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 포맷 지정
     private Timestamp writeDate; //작성일
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 포맷 지정
     private Timestamp updateDate; //수정일
-        
 }
 
 
