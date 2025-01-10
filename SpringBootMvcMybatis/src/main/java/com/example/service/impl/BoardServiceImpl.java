@@ -12,8 +12,12 @@ import com.example.service.BoardService;
 @Service
 public class BoardServiceImpl implements BoardService {
 	
-	@Autowired
-	private BoardMapper boardMapper; //BoardMapper 의존성 주입
+	private final BoardMapper boardMapper;
+
+    @Autowired
+    public BoardServiceImpl(BoardMapper boardMapper) {
+        this.boardMapper = boardMapper;
+    }
 
 	//게시글 등록
 	@Override
