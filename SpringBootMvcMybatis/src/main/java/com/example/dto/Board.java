@@ -42,11 +42,11 @@ public class Board {
     
 	@JsonProperty("writeDate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 포맷 지정
-    private Timestamp writeDate; //작성일
+    private Timestamp write_date; //작성일
 
 	@JsonProperty("updateDate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 포맷 지정
-    private Timestamp updateDate; //수정일
+    private Timestamp update_date; //수정일
 
 }
 

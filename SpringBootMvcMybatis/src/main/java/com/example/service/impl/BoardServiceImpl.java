@@ -24,7 +24,7 @@ public class BoardServiceImpl implements BoardService {
 	//게시글 등록
 	@Override
 	public String createBoard(Board board) {
-		board.setWriteDate(getCurrentTime());
+		board.setWrite_date(getCurrentTime());
 		boardMapper.createBoard(board); //Mapper를 통해 DB에 게시글 저장
 		return "게시글이 성공적으로 등록되었습니다.";
 	}
@@ -44,7 +44,7 @@ public class BoardServiceImpl implements BoardService {
 	//게시글 수정
 	@Override
 	public String updateBoard(Board board) {
-		board.setUpdateDate(getCurrentTime());
+		board.setUpdate_date(getCurrentTime());
 		boardMapper.updateBoard(board); //Mapper를 통해 게시글 수정
 		return "게시글이 성공적으로 수정되었습니다.";
 	}
