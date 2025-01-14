@@ -18,17 +18,17 @@
     
     <!-- 게시글 등록 -->
     <insert id="createBoard" parameterType="com.example.dto.Board">
- 		<![CDATA[
- 			insert into board (num, id, title, content, writer)
- 			values (#{num}, #{id}, #{title}, #{content}, #{writer})
- 		]]>
+		<![CDATA[
+        	INSERT INTO board (num, id, title, content, writer, write_date, update_date)
+        	VALUES (#{num}, #{id}, #{title}, #{content}, #{writer}, NOW(), NOW())
+   		]]>
     </insert>
     
     <!-- 게시글 수정 -->
     <update id="updateBoard" parameterType="com.example.dto.Board">
 	    <![CDATA[
 	    	update board 
-	    	set title = #{title}, content = #{content}, update_date = now()
+	    	set title = #{title}, content = #{content}, update_date = NOW()
 	    	where id = #{id}
 	    ]]>
     </update>

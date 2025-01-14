@@ -3,6 +3,7 @@ package com.example.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ public class BoardController {
 	
 	//게시글 등록 (CREATE)
 	@PostMapping //POST (등록 또는 생성)
+	@Transactional
 	public String createBoard(@RequestBody Board board) {
 		//클라이언트로부터 받은 게시글 데이터(Board 객체)를 BoardService를 통해 저장
 		boardService.createBoard(board);
@@ -46,6 +48,7 @@ public class BoardController {
 
 	//게시글 수정 (UPDATE)
 	@PutMapping //PUT (수정 또는 갱신)
+	@Transactional
 	public String updateBoard(@RequestBody Board board) {
 		//클라이언트로부터 받은 게시글 데이터(Board 객체)를 BoardService를 통해 수정
 		boardService.updateBoard(board);
@@ -54,6 +57,7 @@ public class BoardController {
 
     //게시글 삭제 (DELETE)
 	@DeleteMapping("/{id}")
+	@Transactional
 	public String deleteBoard(@PathVariable int id) {
 		//클라이언트로부터 받은 게시글ID를 BoardService를 통해 삭제
 		boardService.deleteBoard(id);

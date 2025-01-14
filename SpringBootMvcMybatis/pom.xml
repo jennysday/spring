@@ -69,7 +69,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version> <!-- 버전 추가 -->
-            <optional>true</optional>
         </dependency>
         
          <!-- JSP 의존성 추가 -->

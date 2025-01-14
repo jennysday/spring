@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Builder;
 import lombok.Data;
 
 /*
@@ -21,9 +20,8 @@ import lombok.Data;
 */
 
 @Data
-@Builder
 public class Board {
-
+	
 	@JsonProperty("rowNum")
     private int rownum; //행번호 
 	
@@ -42,11 +40,14 @@ public class Board {
 	@JsonProperty("writer")
     private String writer; //작성자
     
+	@JsonProperty("writeDate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 포맷 지정
     private Timestamp writeDate; //작성일
 
+	@JsonProperty("updateDate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 포맷 지정
     private Timestamp updateDate; //수정일
+
 }
 
 
